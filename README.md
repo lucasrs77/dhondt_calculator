@@ -1,4 +1,7 @@
 # dhondt_calculator
+# Aurthors
+## Lucas and Wei
+
 Dhondt calculator
 
 
