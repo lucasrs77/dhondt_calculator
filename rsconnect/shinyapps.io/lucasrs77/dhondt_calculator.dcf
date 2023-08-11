@@ -1,0 +1,12 @@
+name: dhondt_calculator
+title: dhondt_calculator
+username: lucasrs77
+account: lucasrs77
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 9578437
+bundleId: 7548000
+url: https://lucasrs77.shinyapps.io/dhondt_calculator/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE

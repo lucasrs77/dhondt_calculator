@@ -1,7 +1,10 @@
 library(shiny)
 library(DT)
+library(rsconnect)
+library(shinythemes)
 
-ui <- fluidPage(
+
+ui <- fluidPage(theme = shinytheme("cerulean"),
   titlePanel("Seat Allocation Calculator using D'Hondt Method"),
   sidebarLayout(
     sidebarPanel(
@@ -24,8 +27,9 @@ ui <- fluidPage(
       actionButton("calculate_button", "Calculate"),
       
       h4("Percentage Sum:"),
-      verbatimTextOutput("percentage_sum")
-    ),
+      verbatimTextOutput("percentage_sum"),
+    
+      ),
     mainPanel(
       DTOutput("result_table"),
       verbatimTextOutput("warning_text")
@@ -34,6 +38,7 @@ ui <- fluidPage(
 )
 
 server <- function(input, output, session) {
+  
   observeEvent(input$num_parties, {
     output$party_details <- renderUI({
       party_ui <- lapply(1:input$num_parties, function(i) {
@@ -93,6 +98,7 @@ server <- function(input, output, session) {
     
     return(result_df)
   })
+  
   
   output$result_table <- renderDT({
     result_df <- seats_allocation()
